@@ -1,0 +1,22 @@
+package cart.global.config;
+
+import java.util.List;
+
+import cart.domain.member.persistence.MemberDao;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.method.support.HandlerMethodArgumentResolver;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+
+@Configuration
+public class WebMvcConfig implements WebMvcConfigurer {
+    private final MemberDao memberDao;
+
+    public WebMvcConfig(MemberDao memberDao) {
+        this.memberDao = memberDao;
+    }
+
+    @Override
+    public void addArgumentResolvers(List<HandlerMethodArgumentResolver> resolvers) {
+        resolvers.add(new MemberArgumentResolver(memberDao));
+    }
+}
