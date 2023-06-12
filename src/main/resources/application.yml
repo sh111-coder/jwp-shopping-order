@@ -1,0 +1,9 @@
+spring:
+  thymeleaf:
+    cache: false
+
+  datasource:
+    url: jdbc:mysql://localhost:13306/shopping-order
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: user
+    password: password
