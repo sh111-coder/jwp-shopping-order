@@ -1,13 +1,13 @@
-package cart.domain.cartitem.presentation;
+package cart.cartitem.presentation;
 
 import java.net.URI;
 import java.util.List;
 
-import cart.domain.cartitem.application.CartItemService;
-import cart.domain.cartitem.application.dto.CartItemQuantityUpdateRequest;
-import cart.domain.cartitem.application.dto.CartItemRequest;
-import cart.domain.cartitem.application.dto.CartItemResponse;
-import cart.domain.member.domain.Member;
+import cart.cartitem.application.CartItemService;
+import cart.cartitem.application.dto.CartItemQuantityUpdateRequest;
+import cart.cartitem.application.dto.CartItemRequest;
+import cart.cartitem.application.dto.CartItemResponse;
+import cart.member.domain.Member;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

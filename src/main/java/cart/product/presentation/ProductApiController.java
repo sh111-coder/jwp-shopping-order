@@ -1,11 +1,11 @@
-package cart.domain.product.presentation;
+package cart.product.presentation;
 
 import java.net.URI;
 import java.util.List;
 
-import cart.domain.product.application.ProductService;
-import cart.domain.product.application.dto.ProductRequest;
-import cart.domain.product.application.dto.ProductResponse;
+import cart.product.application.ProductService;
+import cart.product.application.dto.ProductRequest;
+import cart.product.application.dto.ProductResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

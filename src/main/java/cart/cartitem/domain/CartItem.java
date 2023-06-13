@@ -1,9 +1,9 @@
-package cart.domain.cartitem.domain;
+package cart.cartitem.domain;
 
 import java.util.Objects;
 
-import cart.domain.member.domain.Member;
-import cart.domain.product.domain.Product;
+import cart.member.domain.Member;
+import cart.product.domain.Product;
 import cart.global.exception.CartItemException;
 
 public class CartItem {

@@ -8,12 +8,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import cart.domain.cartitem.application.dto.CartItemQuantityUpdateRequest;
-import cart.domain.cartitem.application.dto.CartItemRequest;
-import cart.domain.cartitem.application.dto.CartItemResponse;
-import cart.domain.member.domain.Member;
-import cart.domain.member.persistence.MemberDao;
-import cart.domain.product.application.dto.ProductRequest;
+import cart.cartitem.application.dto.CartItemQuantityUpdateRequest;
+import cart.cartitem.application.dto.CartItemRequest;
+import cart.cartitem.application.dto.CartItemResponse;
+import cart.member.domain.Member;
+import cart.member.persistence.MemberDao;
+import cart.product.application.dto.ProductRequest;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,10 +1,10 @@
-package cart.domain.member.persistence;
+package cart.member.persistence;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
-import cart.domain.member.domain.Member;
+import cart.member.domain.Member;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;

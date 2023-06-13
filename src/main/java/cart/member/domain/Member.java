@@ -1,4 +1,4 @@
-package cart.domain.member.domain;
+package cart.member.domain;
 
 public class Member {
     private Long id;

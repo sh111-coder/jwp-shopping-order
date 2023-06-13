@@ -1,15 +1,15 @@
-package cart.domain.cartitem.application;
+package cart.cartitem.application;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import cart.domain.cartitem.application.dto.CartItemQuantityUpdateRequest;
-import cart.domain.cartitem.application.dto.CartItemRequest;
-import cart.domain.cartitem.application.dto.CartItemResponse;
-import cart.domain.cartitem.domain.CartItem;
-import cart.domain.cartitem.persistence.CartItemDao;
-import cart.domain.member.domain.Member;
-import cart.domain.product.persistence.ProductDao;
+import cart.cartitem.persistence.CartItemDao;
+import cart.cartitem.application.dto.CartItemQuantityUpdateRequest;
+import cart.cartitem.application.dto.CartItemRequest;
+import cart.cartitem.application.dto.CartItemResponse;
+import cart.cartitem.domain.CartItem;
+import cart.member.domain.Member;
+import cart.product.persistence.ProductDao;
 import org.springframework.stereotype.Service;
 
 @Service

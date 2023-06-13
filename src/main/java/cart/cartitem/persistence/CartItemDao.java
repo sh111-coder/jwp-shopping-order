@@ -1,13 +1,13 @@
-package cart.domain.cartitem.persistence;
+package cart.cartitem.persistence;
 
 import java.sql.PreparedStatement;
 import java.sql.Statement;
 import java.util.List;
 import java.util.Objects;
 
-import cart.domain.cartitem.domain.CartItem;
-import cart.domain.member.domain.Member;
-import cart.domain.product.domain.Product;
+import cart.cartitem.domain.CartItem;
+import cart.member.domain.Member;
+import cart.product.domain.Product;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;

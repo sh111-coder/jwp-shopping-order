@@ -1,7 +1,7 @@
 package cart.global.config;
 
-import cart.domain.member.domain.Member;
-import cart.domain.member.persistence.MemberDao;
+import cart.member.domain.Member;
+import cart.member.persistence.MemberDao;
 import cart.global.exception.AuthenticationException;
 import org.apache.tomcat.util.codec.binary.Base64;
 import org.springframework.core.MethodParameter;

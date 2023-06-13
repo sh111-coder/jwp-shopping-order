@@ -1,12 +1,12 @@
-package cart.domain.product.application;
+package cart.product.application;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-import cart.domain.product.application.dto.ProductRequest;
-import cart.domain.product.application.dto.ProductResponse;
-import cart.domain.product.domain.Product;
-import cart.domain.product.persistence.ProductDao;
+import cart.product.application.dto.ProductRequest;
+import cart.product.application.dto.ProductResponse;
+import cart.product.domain.Product;
+import cart.product.persistence.ProductDao;
 import org.springframework.stereotype.Service;
 
 @Service

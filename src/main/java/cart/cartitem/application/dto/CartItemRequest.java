@@ -1,4 +1,4 @@
-package cart.domain.cartitem.application.dto;
+package cart.cartitem.application.dto;
 
 public class CartItemRequest {
     private Long productId;
