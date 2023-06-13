@@ -3,7 +3,11 @@ spring:
     cache: false
 
   datasource:
-    url: jdbc:mysql://localhost:13306/shopping-order
+    url: jdbc:mysql://localhost:13306/shopping_order
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: user
     password: password
+
+  jpa:
+    hibernate:
+      ddl-auto: create

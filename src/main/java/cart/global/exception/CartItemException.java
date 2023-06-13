@@ -1,7 +1,6 @@
 package cart.global.exception;
 
 import cart.cartitem.domain.CartItem;
-import cart.member.domain.Member;
 
 public class CartItemException extends RuntimeException {
     public CartItemException(String message) {
@@ -9,8 +8,8 @@ public class CartItemException extends RuntimeException {
     }
 
     public static class IllegalMember extends CartItemException {
-        public IllegalMember(CartItem cartItem, Member member) {
-            super("Illegal member attempts to cart; cartItemId=" + cartItem.getId() + ", memberId=" + member.getId());
+        public IllegalMember(CartItem cartItem, Long memberId) {
+            super("Illegal member attempts to cart; cartItemId=" + cartItem.getId() + ", memberId=" + memberId);
         }
     }
 }

@@ -3,7 +3,7 @@ package cart.cartitem.application.dto;
 public class CartItemRequest {
     private Long productId;
 
-    public CartItemRequest() {
+    private CartItemRequest() {
     }
 
     public CartItemRequest(Long productId) {
