@@ -7,7 +7,8 @@ import cart.cartitem.application.CartItemService;
 import cart.cartitem.application.dto.CartItemQuantityUpdateRequest;
 import cart.cartitem.application.dto.CartItemRequest;
 import cart.cartitem.application.dto.CartItemResponse;
-import cart.member.domain.Member;
+import cart.global.auth.AuthMember;
+import cart.global.auth.AuthPrincipal;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,27 +23,27 @@ public class CartItemApiController {
     }
 
     @GetMapping
-    public ResponseEntity<List<CartItemResponse>> showCartItems(Member member) {
-        return ResponseEntity.ok(cartItemService.findByMember(member));
+    public ResponseEntity<List<CartItemResponse>> showCartItems(@AuthPrincipal AuthMember authMember) {
+        return ResponseEntity.ok(cartItemService.findByMember(authMember.getEmail()));
     }
 
     @PostMapping
-    public ResponseEntity<Void> addCartItems(Member member, @RequestBody CartItemRequest cartItemRequest) {
-        Long cartItemId = cartItemService.add(member, cartItemRequest);
+    public ResponseEntity<Void> addCartItems(@AuthPrincipal AuthMember authMember, @RequestBody CartItemRequest cartItemRequest) {
+        Long cartItemId = cartItemService.add(authMember.getEmail(), cartItemRequest);
 
         return ResponseEntity.created(URI.create("/cart-items/" + cartItemId)).build();
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<Void> updateCartItemQuantity(Member member, @PathVariable Long id, @RequestBody CartItemQuantityUpdateRequest request) {
-        cartItemService.updateQuantity(member, id, request);
+    public ResponseEntity<Void> updateCartItemQuantity(@AuthPrincipal AuthMember authMember, @PathVariable Long id, @RequestBody CartItemQuantityUpdateRequest request) {
+        cartItemService.updateQuantity(authMember.getEmail(), id, request);
 
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> removeCartItems(Member member, @PathVariable Long id) {
-        cartItemService.remove(member, id);
+    public ResponseEntity<Void> removeCartItems(@AuthPrincipal AuthMember authMember, @PathVariable Long id) {
+        cartItemService.remove(authMember.getEmail(), id);
 
         return ResponseEntity.noContent().build();
     }

@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import javax.persistence.*;
 
-import cart.global.exception.CartItemException;
+import cart.cartitem.exception.CartItemException;
 
 @Entity
 public class CartItem {
