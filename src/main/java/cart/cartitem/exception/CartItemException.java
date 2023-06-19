@@ -1,4 +1,4 @@
-package cart.global.exception;
+package cart.cartitem.exception;
 
 import cart.cartitem.domain.CartItem;
 
