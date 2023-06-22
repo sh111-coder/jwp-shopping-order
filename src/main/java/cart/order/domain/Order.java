@@ -1,16 +1,17 @@
 package cart.order.domain;
 
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
 import javax.persistence.*;
 
+import cart.common.BaseTimeEntity;
+
 @Entity
 @Table(name = "ORDERS")
-public class Order {
+public class Order extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_id")
@@ -23,19 +24,15 @@ public class Order {
 
     private int totalPrice;
 
-    private LocalDateTime createdAt;
-
     protected Order() {
     }
 
     private Order(final Long id, final Long memberId,
-                  final List<OrderItem> orderItems, final int totalPrice,
-                  final LocalDateTime createdAt) {
+                  final List<OrderItem> orderItems, final int totalPrice) {
         this.id = id;
         this.memberId = memberId;
         this.orderItems = orderItems;
         this.totalPrice = totalPrice;
-        this.createdAt = createdAt;
     }
 
     public static class Builder {
@@ -44,7 +41,6 @@ public class Order {
         private Long memberId;
         private List<OrderItem> orderItems = new ArrayList<>();
         private int totalPrice;
-        private LocalDateTime createdAt;
 
         public Builder id(final Long id) {
             this.id = id;
@@ -66,13 +62,8 @@ public class Order {
             return this;
         }
 
-        public Builder createdAt(final LocalDateTime createdAt) {
-            this.createdAt = createdAt;
-            return this;
-        }
-
         public Order build() {
-            return new Order(id, memberId, orderItems, totalPrice, createdAt);
+            return new Order(id, memberId, orderItems, totalPrice);
         }
     }
 
@@ -90,9 +81,5 @@ public class Order {
 
     public int getTotalPrice() {
         return totalPrice;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
     }
 }

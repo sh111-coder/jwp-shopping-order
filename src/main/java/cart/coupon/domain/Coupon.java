@@ -2,10 +2,11 @@ package cart.coupon.domain;
 
 import javax.persistence.*;
 
+import cart.common.BaseTimeEntity;
 import cart.member.domain.Member;
 
 @Entity
-public class Coupon {
+public class Coupon extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "coupon_id")

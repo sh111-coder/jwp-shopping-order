@@ -5,9 +5,10 @@ import java.util.Objects;
 import javax.persistence.*;
 
 import cart.cartitem.exception.CartItemException;
+import cart.common.BaseTimeEntity;
 
 @Entity
-public class CartItem {
+public class CartItem extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cart_item_id")

@@ -2,8 +2,10 @@ package cart.member.domain;
 
 import javax.persistence.*;
 
+import cart.common.BaseTimeEntity;
+
 @Entity
-public class Member {
+public class Member extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "member_id")

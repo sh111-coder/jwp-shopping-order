@@ -2,8 +2,10 @@ package cart.order.domain;
 
 import javax.persistence.*;
 
+import cart.common.BaseTimeEntity;
+
 @Entity
-public class OrderItem {
+public class OrderItem extends BaseTimeEntity {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "order_item_id")
