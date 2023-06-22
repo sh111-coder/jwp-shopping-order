@@ -7,7 +7,7 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.jdbc.Sql;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@Sql({"/truncate.sql", "/data.sql"})
+@Sql({"/truncate.sql", "/import.sql"})
 public class AcceptanceTest {
 
     @LocalServerPort
