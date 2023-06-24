@@ -23,6 +23,8 @@ public class Coupon extends BaseTimeEntity {
     @Column(name = "coupon_value")
     private int value;
 
+    private Boolean isUsed = false;
+
     protected Coupon() {
     }
 
@@ -64,6 +66,10 @@ public class Coupon extends BaseTimeEntity {
         public Coupon build() {
             return new Coupon(id, member, type, value);
         }
+    }
+
+    public void use() {
+        this.isUsed = true;
     }
 
     public Long getId() {
