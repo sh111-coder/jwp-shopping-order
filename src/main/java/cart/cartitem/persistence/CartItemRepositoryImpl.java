@@ -29,6 +29,14 @@ public class CartItemRepositoryImpl implements CartItemRepository {
     }
 
     @Override
+    public List<CartItem> findAllByMemberIdAndIds(Long memberId, List<Long> ids) {
+        return em.createQuery("select c from CartItem c where c.id in :ids and c.memberId = :memberId", CartItem.class)
+                .setParameter("ids", ids)
+                .setParameter("memberId", memberId)
+                .getResultList();
+    }
+
+    @Override
     public List<CartItem> findAllByMemberId(Long memberId) {
         return em.createQuery("select c from CartItem c where c.memberId = :memberId", CartItem.class)
                 .setParameter("memberId", memberId)

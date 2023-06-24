@@ -9,6 +9,8 @@ public interface CartItemRepository {
 
     Optional<CartItem> findById(Long id);
 
+    List<CartItem> findAllByMemberIdAndIds(Long memberId, List<Long> ids);
+
     List<CartItem> findAllByMemberId(Long memberId);
 
     void deleteByMemberIdAndProductId(Long memberId, Long productId);
