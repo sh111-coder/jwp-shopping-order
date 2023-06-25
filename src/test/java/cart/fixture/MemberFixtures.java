@@ -8,6 +8,7 @@ import static cart.fixture.ProductFixtures.SALAD;
 import java.util.List;
 
 import cart.cartitem.application.dto.CartItemResponse;
+import cart.member.domain.Member;
 
 public class MemberFixtures {
 
@@ -21,5 +22,13 @@ public class MemberFixtures {
                 CartItemResponse.of(MEMBER_A_CART_ITEM1.ENTITY(), CHICKEN.ENTITY()),
                 CartItemResponse.of(MEMBER_A_CART_ITEM2.ENTITY(), SALAD.ENTITY())
         );
+
+        public static Member ENTITY() {
+            return new Member.Builder()
+                    .id(ID)
+                    .email(EMAIL)
+                    .password(PASSWORD)
+                    .build();
+        }
     }
 }
